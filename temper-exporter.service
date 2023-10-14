@@ -1,0 +1,12 @@
+[Unit]
+Description=Temper Exporter
+After=network.target
+
+[Service]
+User=temper
+Group=temper
+Type=simple
+ExecStart=/usr/local/bin/temper-exporter
+
+[Install]
+WantedBy=multi-user.target

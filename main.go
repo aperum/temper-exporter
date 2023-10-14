@@ -26,11 +26,13 @@ type Temps []Temp
 
 func newTemperCollector() *temperCollector {
 	return &temperCollector{
-		internalTemp: prometheus.NewDesc("internal_temp",
+		internalTemp: prometheus.NewDesc(
+			prometheus.BuildFQName("temper", "", "internal_temp"),
 			"Reports the internal temper temperature",
 			nil, nil,
 		),
-		externalTemp: prometheus.NewDesc("external_temp",
+		externalTemp: prometheus.NewDesc(
+			prometheus.BuildFQName("temper", "", "external_temp"),
 			"Reports the external temper temperature",
 			nil, nil,
 		),
