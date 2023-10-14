@@ -77,6 +77,6 @@ func main() {
   t := newTemperCollector()
 	prometheus.MustRegister(t)
 
-	http.Handle("/console/metrics", promhttp.Handler())
+	http.Handle("/metrics", promhttp.Handler())
 	log.Fatal(http.ListenAndServe(":9201", nil))
 }
