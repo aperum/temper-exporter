@@ -79,14 +79,4 @@ func main() {
 
 	http.Handle("/console/metrics", promhttp.Handler())
 	log.Fatal(http.ListenAndServe(":9201", nil))
-	// t := getTemp()
-	//
-	// go func() {
-	// 	t = getTemp()
-	//
-	// 	time.Sleep(30 * time.Second)
-	// }()
-	//
-	// fmt.Printf("Temper output: %f\n", t.InternalTemp)
-	// fmt.Printf("Temper output: %f\n", t.ExternalTemp)
 }
