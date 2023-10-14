@@ -49,7 +49,7 @@ func (collector *temperCollector) Collect(ch chan<- prometheus.Metric) {
 
 	m1 := prometheus.MustNewConstMetric(collector.internalTemp, prometheus.GaugeValue, t.InternalTemp)
 	m2 := prometheus.MustNewConstMetric(collector.externalTemp, prometheus.GaugeValue, t.ExternalTemp)
-	m1 = prometheus.NewMetricWithTimestamp(time.Now().Add(-time.Hour), m1)
+	m1 = prometheus.NewMetricWithTimestamp(time.Now(), m1)
 	m2 = prometheus.NewMetricWithTimestamp(time.Now(), m2)
 	ch <- m1
 	ch <- m2
